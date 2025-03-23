@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄影素材库</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>📸 拍摄素材库</h1>
+        <button class="new-project-btn" onclick="openEditor('new')">
+            <span class="material-icons">add_circle</span> 新建拍摄
+        </button>
+    </header>
+
+    <main class="grid-container" id="projectGrid">
+        <!-- 项目卡片将通过JavaScript动态加载 -->
+    </main>
+
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

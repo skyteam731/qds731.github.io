@@ -1,0 +1,136 @@
+:root {
+  --primary-blue: #2196F3;
+  --secondary-blue: #90CAF9;
+  --background-gradient: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+body {
+  background: var(--background-gradient);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.header {
+  background: var(--primary-blue);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.15);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  animation: modalSlide 0.3s ease-out;
+}
+
+@keyframes modalSlide {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.new-project-btn {
+  background: var(--secondary-blue);
+  color: var(--primary-blue);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+
+/* 按钮基础样式 */
+button, .btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #1976D2 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(25,118,210,0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 悬停状态 */
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(25,118,210,0.4);
+  background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+}
+
+/* 添加按钮特殊样式 */
+.add-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  box-shadow: 0 2px 4px rgba(76,175,80,0.3);
+}
+
+.add-btn:hover {
+  background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
+}
+
+/* 按钮组布局 */
+.form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.material-icons {
+  font-size: 18px;
+  vertical-align: middle;
+}
